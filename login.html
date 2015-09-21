@@ -1,0 +1,50 @@
+<!doctype HTML>
+<html>
+<head>
+	<title>Login</title>
+	
+	<meta charset="UTF-8" />
+	<meta description="Description" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta property="og:title" content="Posdta" />
+	
+	<link rel="shortcut icon" href="img/favicon.png"> 
+	
+	<!-- bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" >
+	<link href="css/mfi.css" rel="stylesheet" >
+</head>
+<body>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="js/jquery.js"></script>
+	<!-- Include all compiled plugins -->
+	<script src="js/bootstrap.min.js"></script>
+	
+	<!--<div class="jumbotron">-->
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-4 formContainer">
+				<div class="formHeader">
+					<a href="index.php"><img src="img/mfi_alpha_login.png" class="img-responsive center-block formTitle"/></a>
+				</div>
+				<div class="formBody">
+					<form role="form" action="php/login.php" method="POST"  class="containedForm">
+						<div class="form-group">
+							<label for="user">Username:</label>
+							<input type="text" class="form-control" id="user" name="user" placeholder="Username" />
+						</div>
+						<div class="form-group">
+							<label for="pwd">Password:</label>
+							<input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password" />
+						</div>
+						<div class="text-center">
+							<button type="submit" class="btn btn-lg btn-primary center-block">Log In</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
