@@ -42,6 +42,10 @@ $(document).ready(function()
 		displayForm(id);
 	});
 	
+	$('body').on('click', '#newUser', function() {
+		displayForm(-1);
+	});
+	
 	$('body').on('click', 'img.deletable', function() {
 		var id = $(this).attr('target');
 		var name = $('#user_'+id).val();
@@ -68,7 +72,7 @@ function saveForm() {
 	var last = $('#last').val();
 	var pwd = $('#pwd').val();
 	var pass = "";
-	if(pwd != "") pass = pwd;
+	if(pwd != "") pass = "&pass=" + pwd;
 	$.ajax({
 		type: "POST",
 		url: "php/submitUser.php",
@@ -152,7 +156,9 @@ function displayUsers(users) {
 		<?php include '_navbar.php'; ?>
 		<div class="mainpage">
 			<div class='userList' id='userListDiv'>
-				<div class="addUser"></div>
+				<div class="addUser">
+					<img src="img/95.png" class="actionButton" id="newUser"/>
+				</div>
 				<div class="table">
 					<table class="table table-hover" id="userTable" data-row-style="rowStyle">
 						<thead>
@@ -169,12 +175,6 @@ function displayUsers(users) {
 								<td>sample</td>
 								<td><img src="img/13.png"/></td>
 								<td><img src="img/118.png"/></td>
-							</tr>
-							<tr class="active">
-								<td>XXXX YYYY</td>
-								<td>user.user</td>
-								<td><img src=""/></td>
-								<td><img src=""/></td>
 							</tr>
 						</tbody>
 					</table>
