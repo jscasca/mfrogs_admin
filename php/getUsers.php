@@ -1,8 +1,9 @@
 <?php
 require 'common.php';
 require 'password.php';
+$uid = $_SESSION['user']->id;
 
-$queryUsers = "Select userId, userName, userFirstName, userLastName from users";
+$queryUsers = "Select userId, userName, userFirstName, userLastName from users where userId <> ".$uid;
 $results = mysql_query($queryUsers, $conexion);
 
 $jsondata = array();

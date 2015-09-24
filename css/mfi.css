@@ -17,10 +17,16 @@ body {
 	border-top-right-radius:10px;
 }
 
+.navbar {
+	margin-top: 10px;
+}
+
 .mainpage {
 	background-color: rgba(255,255,255, 0.90);
+	padding-top: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
+	padding-bottom: 20px;
 	border-bottom-right-radius:10px;
 	border-bottom-left-radius:10px;
 }
@@ -51,17 +57,5 @@ body {
 .formInstructions {
 	padding-top: 10px;
 	padding-bottom: 10px;
-}
-
-.formQuote {
-	padding-top: 15px;
-}
-
-.formQuote > .quote {
-	font-size: 20px;
-}
-
-.formQuote > .author {
-	font-size: 10px;
 }
 
