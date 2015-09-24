@@ -3,7 +3,7 @@ require 'common.php';
 require 'password.php';
 $uid = $_SESSION['user']->id;
 
-$queryUsers = "Select userId, userName, userFirstName, userLastName from users where userId <> ".$uid;
+$queryUsers = "Select userId, userName, userFirstName, userLastName from users where userId <> ".$uid." order by userId desc";
 $results = mysql_query($queryUsers, $conexion);
 
 $jsondata = array();
