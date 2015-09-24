@@ -4,11 +4,15 @@ require 'password.php';
 
 $uid = $_REQUEST['uid'];
 $name = $_REQUEST['user'];
-$pwd = isset($_REQUEST['pwd'])?$_REQUEST['pwd']:'';
+$pwd = isset($_REQUEST['pwd'])?$_REQUEST['pwd']:"";
 $first = $_REQUEST['first'];
 $last = $_REQUEST['last'];
 
 if($uid == -1) {
+	//Check that user does not exist
+	$userQuery = "select * from users where userName = '".$name."'";
+	$userExists = mysql_query($userQuery, $conexion);
+	if(mysql_num_rows($userExists)>0) die("User already exists");
 	//Create
 	$query = "insert into users (userName, userPass, userFirstName, userLastName)
 		values (
@@ -18,6 +22,10 @@ if($uid == -1) {
 			'".mysql_real_escape_string($last)."')";
 	mysql_query($query, $conexion);
 } else if($uid > 0) {
+	//Check that user does not exist
+	$userQuery = "select * from users where userName = '".$name."' and userId <> ".$uid;
+	$userExists = mysql_query($userQuery, $conexion);
+	if(mysql_num_rows($userExists)>0) die("User already exists");
 	//update
 	$query = "update users set 
 		userName = '".mysql_real_escape_string($name)."',

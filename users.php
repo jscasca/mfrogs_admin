@@ -72,7 +72,7 @@ function saveForm() {
 	var last = $('#last').val();
 	var pwd = $('#pwd').val();
 	var pass = "";
-	if(pwd != "") pass = "&pass=" + pwd;
+	if(pwd != "") pass = "&pwd=" + pwd;
 	$.ajax({
 		type: "POST",
 		url: "php/submitUser.php",
